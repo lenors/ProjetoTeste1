@@ -38,6 +38,16 @@ public class classeExecutavel {
 		aluno1.setDataMatricula(dataMatricula);
 		aluno1.setNomeEscola(nomeEscola);
 
+		for (int pos = 1; pos <= 4; pos++) {
+			String nomeDisciplina = JOptionPane.showInputDialog("Nome da Disciplina" + pos + " ?");
+			String notaDisciplina = JOptionPane.showInputDialog("Nota Da disciplina" + pos + " ?");
+
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));
+			aluno1.getDisciplinas().add(disciplina);
+		}
+
 		System.out.println(aluno1.toString());
 		System.out.println("Media do aluno = " + aluno1.getMedianota());
 		System.out.println("Resultado = " + aluno1.getAlunoAprovado());
