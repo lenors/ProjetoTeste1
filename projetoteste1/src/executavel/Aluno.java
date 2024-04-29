@@ -20,10 +20,10 @@ public class Aluno {
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
+
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
-	
 
 	@Override
 	public String toString() {
@@ -48,8 +48,6 @@ public class Aluno {
 		Aluno other = (Aluno) obj;
 		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
 	}
-
-	
 
 	public Aluno() {
 		// TODO Auto-generated constructor stub
@@ -130,16 +128,21 @@ public class Aluno {
 	/* Media do aluno */
 	public double getMedianota() {
 		double somaNotas = 0.0;
-	for (Disciplina disciplina : disciplinas) {
-		somaNotas += disciplina.getNota();
-	}
-	return somaNotas / disciplinas.size();
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		return somaNotas / disciplinas.size();
 	}
 
+	/* Metodo Para saber se o aluno foi aprovado */
 	public String getAlunoAprovado() {
 		double media = this.getMedianota();
-		if (media >= 70) {
-			return "Aluno Aprovado";
+		if (media >= 50) {
+			if (media >= 70) {
+				return "Aluno Aprovado";
+			} else {
+				return "Aluno em recuperacao";
+			}
 		} else {
 			return "Aluno reprovado";
 		}
