@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import cursojava.constantes.StatusAluno;
+
 public class Aluno {
 	private String nome;
 	private int idade;
@@ -139,12 +141,12 @@ public class Aluno {
 		double media = this.getMedianota();
 		if (media >= 50) {
 			if (media >= 70) {
-				return "Aluno Aprovado";
+				return StatusAluno.APROVADO;
 			} else {
-				return "Aluno em recuperacao";
+				return StatusAluno.RECUPERACAO;
 			}
 		} else {
-			return "Aluno reprovado";
+			return StatusAluno.REPROVADO;
 		}
 	}
 }
