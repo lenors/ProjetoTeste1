@@ -1,6 +1,7 @@
 package executavel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,7 +19,7 @@ public class Aluno {
 	private String serieMatriculado;
 
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
-
+	
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
