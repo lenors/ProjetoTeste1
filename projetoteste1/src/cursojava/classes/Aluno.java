@@ -1,4 +1,4 @@
-package executavel;
+package cursojava.classes;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,13 +7,8 @@ import java.util.Objects;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno {
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
+public class Aluno extends Pessoa{
+	
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;

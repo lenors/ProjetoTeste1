@@ -1,4 +1,4 @@
-package executavel;
+package cursojava.classes;
 
 import java.util.Objects;
 

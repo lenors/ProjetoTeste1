@@ -1,6 +1,8 @@
-package executavel;
+package cursojava.classes;
 
 public class Pessoa {
+	
+	/*Classe Pai, classe master, atributos comuns a todos os objetos filhos*/
 	protected String nome;
 	protected int idade;
 	protected String dataNascimento;

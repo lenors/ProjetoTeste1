@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import cursojava.classes.Aluno;
+import cursojava.classes.Disciplina;
 import cursojava.constantes.StatusAluno;
 
 public class classeExecutavel {
