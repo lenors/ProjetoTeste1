@@ -10,6 +10,10 @@ public String getRegistro() {
 public void setRegistro(String registro) {
 	this.registro = registro;
 }
+@Override
+public String toString() {
+	return "Secretario [registro=" + registro + ", nivelCargo=" + nivelCargo + ", experiencia=" + experiencia + "]";
+}
 public String getNivelCargo() {
 	return nivelCargo;
 }

@@ -2,6 +2,11 @@ package cursojava.classes;
 
 public class Diretor extends Pessoa{
 
+	@Override
+	public String toString() {
+		return "Diretor [registroEducacao=" + registroEducacao + ", tempoDirecao=" + tempoDirecao + ", titulacao="
+				+ titulacao + "]";
+	}
 	private String registroEducacao;
 	private int tempoDirecao;
 	private String titulacao;
