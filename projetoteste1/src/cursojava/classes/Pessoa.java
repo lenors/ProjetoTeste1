@@ -1,6 +1,6 @@
 package cursojava.classes;
 
-public class Pessoa {
+public abstract class Pessoa {
 	
 	/*Classe Pai, classe master, atributos comuns a todos os objetos filhos*/
 	protected String nome;
@@ -10,6 +10,9 @@ public class Pessoa {
 	protected String nomeMae;
 	protected String nomePai;
 	protected String numeroCpf;
+	/*Metodo abstrato que fica na classe pai, e obrigatorio para classes filhas*/
+	public abstract double salario();
+
 
 	public String getNome() {
 		return nome;
@@ -66,7 +69,9 @@ public class Pessoa {
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
 	}
-
+public boolean pessoaMaiorIdade() {
+	return idade >= 18;
+}
 	@Override
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="

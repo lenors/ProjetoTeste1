@@ -145,4 +145,19 @@ public class Aluno extends Pessoa{
 			return StatusAluno.REPROVADO;
 		}
 	}
+	@Override
+	public boolean pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		return idade >= 21;
+	}
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Oba, maior de idade" : "Carai, tu e de menor";
+	}
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 1500.00;
+	}
 }
