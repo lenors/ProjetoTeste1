@@ -10,6 +10,7 @@ import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class classeExecutavel {
 	public static void main(String[] args) {
@@ -17,12 +18,10 @@ public class classeExecutavel {
 
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
-		
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
-		
-		if (secretario.autenticar()) {
+
+		if (new Secretario().autenticar(login, senha)) {
+			/* Se TRUE acessa, se false nao acessa */
+
 			/*
 			 * E uma lista que dentro dela temos uma chava que identifica uma sequencia de
 			 * valores tambem
@@ -116,6 +115,8 @@ public class classeExecutavel {
 							+ "com media de = " + aluno.getMedianota());
 				}
 			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Acesso nao permitido");
 		}
 
 		/* Equals e hashcode (Diferenciar e comparar objetos) */
