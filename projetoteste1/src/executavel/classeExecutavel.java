@@ -9,33 +9,24 @@ import javax.swing.JOptionPane;
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
-import cursojava.classesauxi.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
-import cursojava.interfaces.PermitirAcesso;
 
 public class classeExecutavel {
 	public static void main(String[] args) {
-		try {
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
-
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
-
-		if (new FuncaoAutenticacao(permitirAcesso).autenticarCursoJava(permitirAcesso)) {
-			/*
-			 * vou travar o contrato para autorizar somente quem realmente tem o contrato
-			 * 100% legitmo
-			 */
-
-			/* Se TRUE acessa, se false nao acessa */
-
+		
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
+		if (secretario.autenticar()) {
 			/*
 			 * E uma lista que dentro dela temos uma chava que identifica uma sequencia de
 			 * valores tambem
 			 */
-		
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
 			for (int qtd = 1; qtd <= 5; qtd++) {
@@ -125,16 +116,8 @@ public class classeExecutavel {
 							+ "com media de = " + aluno.getMedianota());
 				}
 			}
-		} else {
-			JOptionPane.showMessageDialog(null, "Acesso nao permitido");
 		}
 
 		/* Equals e hashcode (Diferenciar e comparar objetos) */
-	}catch(Exception e) {
-		e.printStackTrace(); /*Erro ao imprimir no console*/ 
-		JOptionPane.showMessageDialog(null, "Erro ao imprimir notas");
-	}finally {
-		JOptionPane.showMessageDialog(null, "Obrigado por aprender java comigo");
 	}
-}
 }

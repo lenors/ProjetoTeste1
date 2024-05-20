@@ -6,18 +6,25 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
-
+	
 	private String login;
-	private String senha;
+	public String getLogin() {
+		return login;
+	}
 
-	public Secretario(String login, String senha) {
+	public void setLogin(String login) {
 		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
-	public Secretario() {
-		// TODO Auto-generated constructor stub
-	}
+	private String senha;
 
 	public String getRegistro() {
 		return registro;
@@ -55,14 +62,10 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	}
 
 	@Override
-	public boolean autenticar(String login, String senha) {
-		this.login = login;
-		this.senha = senha;
-		return autenticar();
-	}
-
 	public boolean autenticar() {
+	
 		return login.equals("admin") && senha.equals("admin");
+		/*Retorna sim caso o login e senha senha admin, se nao false*/
 	}
 
 }
