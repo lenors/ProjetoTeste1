@@ -17,11 +17,11 @@ public class classeExecutavel {
 
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
-		
+
 		Secretario secretario = new Secretario();
 		secretario.setLogin(login);
 		secretario.setSenha(senha);
-		
+
 		if (secretario.autenticar()) {
 			/*
 			 * E uma lista que dentro dela temos uma chava que identifica uma sequencia de
@@ -29,7 +29,7 @@ public class classeExecutavel {
 			 */
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
-			for (int qtd = 1; qtd <= 5; qtd++) {
+			for (int qtd = 1; qtd <= 1; qtd++) {
 
 				String nome = JOptionPane.showInputDialog("Qual o nome do aluno? " + qtd + "?");
 //		String idade = JOptionPane.showInputDialog("Qual a idade do aluno?  ");
