@@ -5,11 +5,11 @@ import java.util.Objects;
 
 /*Essa classe disciplina servira para todos os objetos e instancias de notas e materias*/
 public class Disciplina {
+	
+	/*Cada disciplina vai ter 4 notas durante o ano inteiro*/
 	private double[] nota = new double[4];
 
 	private String disciplina;
-
-	
 
 	public double[] getNota() {
 		return nota;
@@ -55,7 +55,5 @@ public class Disciplina {
 		}
 		return somaTotal / 4;
 	}
-
-	
 
 }

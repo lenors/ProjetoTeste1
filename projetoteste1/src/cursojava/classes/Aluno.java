@@ -7,14 +7,14 @@ import java.util.Objects;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno extends Pessoa{
-	
+public class Aluno extends Pessoa {
+
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
 
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
-	
+
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
@@ -145,12 +145,13 @@ public class Aluno extends Pessoa{
 			return StatusAluno.REPROVADO;
 		}
 	}
+
 	@Override
 	public boolean pessoaMaiorIdade() {
 		// TODO Auto-generated method stub
 		return idade >= 21;
 	}
-	
+
 	public String msgMaiorIdade() {
 		return this.pessoaMaiorIdade() ? "Oba, maior de idade" : "Carai, tu e de menor";
 	}
