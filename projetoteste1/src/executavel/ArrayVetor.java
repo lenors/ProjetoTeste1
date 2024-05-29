@@ -28,18 +28,22 @@ public class ArrayVetor {
 		disciplina2.setNota(notasLogica);
 		aluno.getDisciplinas().add(disciplina2);
 
-		System.out.println("Nome do aluno = " + aluno.getNome() + ", Inscrito no curso: " + aluno.getNomeEscola());
-		System.out.println("-------------Disciplina do aluno -------------");
-		for (Disciplina disci : aluno.getDisciplinas()) {
-			System.out.println("Disciplina : " + disci.getDisciplina());
-			System.out.println("As notas da disciplinas sao");
+		
+			Aluno[] arrayAlunos = new Aluno[1];
+			arrayAlunos[0] = aluno;
 			
-			for(int pos = 0; pos < disci.getNota().length; pos++) {
-				System.out.println("Nota " + pos+1 + " E igual = " + disci.getNota()[pos]);
-				
+			for(int pos = 0; pos < arrayAlunos.length; pos++) {
+				System.out.println("Nome do aluno  e: " + arrayAlunos[pos].getNome());
+				for(Disciplina d : arrayAlunos[pos].getDisciplinas()) {
+					System.out.println("Nome da Disciplina " + d.getDisciplina());
+					
+					for(int posNota = 0; posNota < d.getNota().length; posNota++) {
+						System.out.println("As notas sao " + posNota + "e igual a " + d.getNota()[posNota]);
+					}
+				}
 			}
-			
+		
 		}
 
 	}
-}
+
